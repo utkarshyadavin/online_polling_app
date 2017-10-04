@@ -5,3 +5,9 @@ from django.http import HttpResponse
 def index(request):
 	return HttpResponse("Hello World. You are at the poll index.")
 # Create your views here.
+
+
+
+def detail(request , question_id):
+	response = "You are looking at question %s."
+	return HttpResponse(response % question_id)
