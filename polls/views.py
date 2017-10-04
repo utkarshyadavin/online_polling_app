@@ -3,7 +3,11 @@ from django.http import HttpResponse
 
 
 def index(request):
-	return HttpResponse("Hello World. You are at the poll index.")
+	latest_question_list  = Question.objects.order_by('-pub_date')[:5]
+	output = ' , '.join([q.question_text for q in latest_question_list])
+
+
+	return HttpResponse(output)
 # Create your views here.
 
 
