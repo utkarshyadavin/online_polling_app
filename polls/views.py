@@ -12,7 +12,7 @@ def detail(request , question_id):
 	response = "You are looking at question %s."
 	return HttpResponse(response % question_id)
 
-def result(request , question_id):
+def results(request , question_id):
 	return HttpResponse("You're looking at the results of question %s." % question_id)
 
 
